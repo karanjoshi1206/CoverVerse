@@ -24,7 +24,7 @@ const CreateMusic = () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     const recorder = new MediaRecorder(stream);
 
-    const chunks: any[] = [];
+    const chunks: Blob[] = [];
 
     recorder.ondataavailable = (event) => {
       chunks.push(event.data);
@@ -60,6 +60,8 @@ const CreateMusic = () => {
       reader.readAsDataURL(file);
     }
   };
+
+  console.log(`audioBlob`, audioBlob);
 
   return (
     <div className="container mx-auto py-8 min-h-[100svh]">
