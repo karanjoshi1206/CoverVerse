@@ -2,20 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Backgrounds and Foreground */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary Colors - Vibrant Purple */
+    --primary: 267 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary Colors - Electric Blue */
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Colors */
+    --muted: 240 5% 64.9%;
+    --muted-foreground: 240 5% 84.9%;
+
+    /* Accent Colors - Neon Green */
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive Colors - Bright Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and Inputs */
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    /* Ring */
+    --ring: 267 75% 50%;
+
+    /* Chart Colors */
+    --chart-1: 267 75% 50%;  /* Purple */
+    --chart-2: 199 89% 48%;  /* Electric Blue */
+    --chart-3: 142 71% 45%;  /* Neon Green */
+    --chart-4: 31 100% 60%;  /* Bright Orange */
+    --chart-5: 326 100% 74%; /* Hot Pink */
+
+    /* Radius */
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 267 75% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 5% 64.9%;
+    --muted-foreground: 240 5% 84.9%;
+
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --ring: 267 75% 50%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
+
